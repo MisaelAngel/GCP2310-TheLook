@@ -11,6 +11,13 @@ view: users {
     type: number
     sql: ${TABLE}.age ;;
   }
+
+  dimension: age_tier {
+    type: tier
+    tiers: [10,20,30,40,50,60,70,80,90]
+    sql: ${age} ;;
+  }
+
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
@@ -58,13 +65,13 @@ view: users {
   set: detail {
     fields: [
 id,
-		first_name,
-		last_name,
-		events.count,
-		orders.count,
-		saralooker.count,
-		sindhu.count,
-		user_data.count
+    first_name,
+    last_name,
+    events.count,
+    orders.count,
+    saralooker.count,
+    sindhu.count,
+    user_data.count
 ]
   }
 
